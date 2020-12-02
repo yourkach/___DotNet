@@ -1,0 +1,6 @@
+/home/yury/RiderProjects/MyDotNet/MyOrchestra/bin/Debug/MyOrchestra.exe
+/home/yury/RiderProjects/MyDotNet/MyOrchestra/bin/Debug/MyOrchestra.pdb
+/home/yury/RiderProjects/MyDotNet/MyOrchestra/obj/Debug/MyOrchestra.csprojAssemblyReference.cache
+/home/yury/RiderProjects/MyDotNet/MyOrchestra/obj/Debug/MyOrchestra.csproj.CoreCompileInputs.cache
+/home/yury/RiderProjects/MyDotNet/MyOrchestra/obj/Debug/MyOrchestra.exe
+/home/yury/RiderProjects/MyDotNet/MyOrchestra/obj/Debug/MyOrchestra.pdb
