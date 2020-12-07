@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -13,7 +14,12 @@ namespace MyOrchestra.Orchestra
         {
             Musicians = musicians.ToImmutableList();
             Conductor = conductor;
+            
+            _persons = Musicians.ToList<Person>();
+            _persons.Add(conductor);
         }
+
+        private List<Person> _persons;
 
         public ImmutableList<Musician> Musicians { get; }
 
@@ -62,6 +68,16 @@ namespace MyOrchestra.Orchestra
                 if (Musicians.All(m => m.Instrument.Type != part.InstrumentType)) return false;
             }
             return true;
+        }
+
+        public IEnumerator<Person> GetEnumerator()
+        {
+            return _persons.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

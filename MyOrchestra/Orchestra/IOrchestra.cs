@@ -5,7 +5,8 @@ using MyOrchestra.Persons;
 
 namespace MyOrchestra.Orchestra
 {
-    public interface IOrchestra
+    // Интерфейс оркестра наследует интерфейс перечисляемого для типа Person
+    public interface IOrchestra : IEnumerable<Person>
     {
         ImmutableList<Musician> Musicians { get; }
 

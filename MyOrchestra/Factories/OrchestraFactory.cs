@@ -5,7 +5,8 @@ using MyOrchestra.Persons;
 
 namespace MyOrchestra.Factories
 {
-    public class OrchestraFactory : IOrchestraFactory
+    // Фабрика, создающая оркестр
+    public class OrchestraFactory : IFactory<IOrchestra>
     {
         public IOrchestra create()
         {

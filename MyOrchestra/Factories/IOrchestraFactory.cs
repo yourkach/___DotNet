@@ -1,9 +1,12 @@
+using System;
 using MyOrchestra.Orchestra;
+using MyOrchestra.Persons;
 
 namespace MyOrchestra.Factories
 {
-    public interface IOrchestraFactory
+    // базовый класс фабрики, тип объявлен ковариантным
+    public interface IFactory<out T>
     {
-        public IOrchestra create();
+        public T create();
     }
 }
