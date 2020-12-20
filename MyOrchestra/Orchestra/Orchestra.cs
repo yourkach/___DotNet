@@ -43,20 +43,42 @@ namespace MyOrchestra.Orchestra
                     {
                         Console.WriteLine($"{partMusician.Instrument.Name} ");
                     }
+
                     foreach (var note in part.Melody.Notes)
                     {
                         Console.Write(note + " ");
                     }
+
                     Console.WriteLine();
                     Console.WriteLine();
                 }
+
                 Console.WriteLine("Спасибо за внимание!");
                 Console.WriteLine("Для вас играли:");
                 foreach (var musician in Musicians)
                 {
                     Console.WriteLine($"{musician.Instrument.Name} - {musician.Name}");
                 }
+
                 Console.WriteLine("Апплодисменты!");
+            }
+        }
+
+        public void SortPersonsWithFunction(Func<Person, Person, bool> compareFunction)
+        {
+            if (compareFunction == null) return;
+            Person temp;
+            for (var i = 0; i < _persons.Count - 1; i++)
+            {
+                for (var j = 0; j < _persons.Count - i - 1; j++)
+                {
+                    if (compareFunction(_persons[j + 1], _persons[j]))
+                    {
+                        temp = _persons[j + 1];
+                        _persons[j + 1] = _persons[j];
+                        _persons[j] = temp;
+                    }
+                }
             }
         }
 
@@ -67,6 +89,7 @@ namespace MyOrchestra.Orchestra
             {
                 if (Musicians.All(m => m.Instrument.Type != part.InstrumentType)) return false;
             }
+
             return true;
         }
 

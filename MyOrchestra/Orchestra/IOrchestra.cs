@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using MyOrchestra.Melodies;
@@ -13,5 +14,8 @@ namespace MyOrchestra.Orchestra
         Conductor Conductor { get; }
 
         void PlayComposition(MusicalComposition composition);
+
+        // Метод для сортировки внутренней коллекции, хранящей элементы типа Person
+        void SortPersonsWithFunction(Func<Person, Person, bool> compareFunction);
     }
 }
